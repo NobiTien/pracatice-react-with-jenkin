@@ -1,19 +1,17 @@
 pipeline {
-    agent none
-    stages {
-        stage('Build') { 
-            agent {
-                docker {
-                    image 'node:lts-buster-slim'
-                    args '-p 3000:3000'
-                }
-            }
-            environment {
-                CI = 'true'
-            }
+     agent any
+     stages {
+        stage("Build") {
             steps {
-                sh 'npm install' 
+                sh "sudo npm install"
+                sh "sudo npm run build"
             }
         }
+        // stage("Deploy") {
+        //     steps {
+        //         sh "sudo rm -rf /var/www/jenkins-react-app"
+        //         sh "sudo cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-app/"
+        //     }
+        // }
     }
 }
