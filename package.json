@@ -65,7 +65,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test --reporters=jest-junit",
     "eject": "react-scripts eject",
     "test:generators": "ts-node --project=./internals/ts-node.tsconfig.json ./internals/testing/generators/test-generators.ts",
     "start:prod": "yarn run build && serve -s build",
@@ -123,9 +123,6 @@
         "statements": 90
       }
     },
-    "coverageReporters": [
-      "text",
-      "cobertura"
-    ]
+    "coverageReporters": ["jest-junit"]
   }
 }
