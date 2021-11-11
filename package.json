@@ -122,6 +122,7 @@
         "lines": 90,
         "statements": 90
       }
-    }
+    },
+    "coverageReporters": ["text", "cobertura"]
   }
 }
