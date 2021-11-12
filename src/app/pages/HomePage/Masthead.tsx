@@ -9,7 +9,7 @@ export function Masthead() {
   return (
     <Wrapper>
       <Logos />
-      <Title>React Boilerplate meets CRA 10</Title>
+      <Title>React Boilerplate meets CRA</Title>
       <Lead>
         Now you can use the{' '}
         <A
