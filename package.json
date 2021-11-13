@@ -60,12 +60,13 @@
     "stylelint-processor-styled-components": "1.10.0",
     "ts-node": "10.0.0",
     "typescript": "4.2.2",
-    "web-vitals": "2.1.0"
+    "web-vitals": "2.1.0",
+    "jest-junit": "13.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll=false --coverageDirectory=output/coverage/jest --testResultsProcessor ./node_modules/jest-junit",
     "eject": "react-scripts eject",
     "test:generators": "ts-node --project=./internals/ts-node.tsconfig.json ./internals/testing/generators/test-generators.ts",
     "start:prod": "yarn run build && serve -s build",
@@ -122,6 +123,7 @@
         "lines": 90,
         "statements": 90
       }
-    }
-  }
+    },
+    "coverageReporters": ["text", "cobertura"]
+  }  
 }
