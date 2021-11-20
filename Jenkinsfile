@@ -22,5 +22,14 @@ pipeline {
                 sh "sudo cp -r ${WORKSPACE}/build/ /var/www/jenkins-react-app/"
             }
         }
+
+        post {
+            success {
+                echo "SUCCESSFUL"
+            }
+            failure {
+                echo "FAILED"
+            }
+        }
     }
 }
